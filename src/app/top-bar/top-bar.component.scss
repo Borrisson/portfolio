@@ -1,0 +1,20 @@
+#header {
+  .alt {
+    height: 20em;
+    min-height: 75vh;
+  }
+  background-color: #444;
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8em 0 6em 0;
+  background-image: url(../../images/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  position: relative;
+  cursor: default;
+}
