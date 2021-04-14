@@ -24,7 +24,18 @@
       font-family: "Pacifico", cursive;
       text-transform: none;
       letter-spacing: 0;
+      margin-bottom: 0.5em;
     }
+    p {
+      text-transform: uppercase;
+      letter-spacing: 0.325rem;
+      font-size: 0.8em;
+      padding: 0 1.25em;
+    }
+  }
+  .inner {
+    position: relative;
+    z-index: 1;
   }
   &::before {
     content: "";
@@ -46,5 +57,58 @@
   strong,
   b {
     color: #ffffff;
+  }
+}
+
+#header.alt:before {
+  -moz-transition: background-color 3s ease;
+  -webkit-transition: background-color 3s ease;
+  -ms-transition: background-color 3s ease;
+  transition: background-color 3s ease;
+  -moz-transition-delay: 1s;
+  -webkit-transition-delay: 1s;
+  -ms-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+#header.alt .inner {
+  -moz-transition: opacity 2s ease;
+  -webkit-transition: opacity 2s ease;
+  -ms-transition: opacity 2s ease;
+  transition: opacity 2s ease;
+  opacity: 1;
+}
+
+body.is-loading #header.alt:before {
+  background-color: black;
+}
+
+body.is-loading #header.alt .inner {
+  opacity: 0;
+}
+
+@media screen and (max-width: 1280px) {
+  #header {
+    background-attachment: scroll;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #header {
+    padding: 4em 2em 2em 2em;
+  }
+
+  #header.alt h1 {
+    font-size: 2.5em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #header.alt p {
+    padding: 0;
+  }
+
+  #header.alt .inner {
+    max-width: 20em;
   }
 }
