@@ -1,0 +1,46 @@
+#intro {
+  padding: 4em 4em 2em 4em;
+  background-color: #ffffff;
+  border-radius: 4px;
+  text-align: center;
+}
+@media screen and (max-width: 736px) {
+  #intro {
+    padding: 2em 2em 0.1em 2em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #intro {
+    padding: 2em 1em 0.1em 1em;
+  }
+
+  #intro p br {
+    display: none;
+  }
+}
+
+.icon {
+  text-decoration: none;
+  border-bottom: none;
+  position: relative;
+
+  &.major {
+    display: block;
+    margin: 0 0 1.5em 0;
+    cursor: default;
+    font-size: 2.5rem;
+    box-shadow: inset 0 0 0 2px #666666;
+    width: 2.5em;
+    line-height: 2.5em;
+    display: inline-block;
+    border-radius: 100%;
+    color: #666666;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .icon.major:before {
+    font-size: 2rem;
+  }
+}
