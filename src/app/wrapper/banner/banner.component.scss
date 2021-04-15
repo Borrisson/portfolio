@@ -40,7 +40,7 @@
 }
 
 @media screen and (max-width: 736px) {
-  .icon.major:before {
+  .icon.major::before {
     font-size: 2rem;
   }
 }
