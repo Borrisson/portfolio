@@ -7,17 +7,9 @@
   padding: 4em 0 2em 0;
 }
 
-#wrapper > .main {
-  margin-bottom: 4em;
-}
-
 @media screen and (max-width: 980px) {
   #wrapper {
     padding: 2em 0 2em 0;
-  }
-
-  #wrapper > .main {
-    margin-bottom: 2em;
   }
 }
 
@@ -25,10 +17,6 @@
   #wrapper {
     max-width: calc(100% - 2em);
     padding: 1em 0 0.1em 0;
-  }
-
-  #wrapper > .main {
-    margin-bottom: 1em;
   }
 }
 
@@ -66,7 +54,7 @@
   color: inherit;
 }
 
-#footer:before {
+#footer::before {
   content: "";
   display: inline-block;
   width: 6em;
