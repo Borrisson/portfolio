@@ -826,7 +826,7 @@ input[type="radio"]:focus + label:before {
   margin: 0 0 1.5em 0;
 }
 
-.icon.major:before {
+.icon.major::before {
   cursor: default;
   font-size: 2.5rem;
   box-shadow: inset 0 0 0 2px #666666;
