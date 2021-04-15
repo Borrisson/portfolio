@@ -7,7 +7,6 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { BannerComponent } from './wrapper/banner/banner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectsComponent } from './wrapper/projects/projects.component';
-import { ProjectItemComponent } from './wrapper/projects/project-item/project-item.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +15,9 @@ import { ProjectItemComponent } from './wrapper/projects/project-item/project-it
     WrapperComponent,
     BannerComponent,
     ProjectsComponent,
-    ProjectItemComponent
   ],
-  imports: [
-    BrowserModule,
-    FontAwesomeModule
-  ],
+  imports: [BrowserModule, FontAwesomeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,3 +1,17 @@
 <section class="main items" *ngFor="let project of projects">
-  <app-project-item [project]="project"></app-project-item>
+  <article class="item">
+    <header>
+      <!-- This will be the bar chart project, tidy it up and it might be nice -->
+      <a href="barChart/index.html"
+        ><img src="assets/images/pic0{{ project.id }}.jpg" alt=""
+      /></a>
+      <h3>{{ project.name }}</h3>
+    </header>
+    <p>
+      {{ project.description }}
+    </p>
+    <ul class="actions">
+      <li><a href="barChart/index.html" class="button">Repo</a></li>
+    </ul>
+  </article>
 </section>
