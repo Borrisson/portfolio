@@ -162,8 +162,9 @@ body.is-loading *::after {
 body {
   background-color: #f4f4f4;
   color: #666666;
-  &.is-loading {
-    #header {
+
+  #header {
+    &.is-loading {
       &.alt {
         &::before {
           background-color: black;
