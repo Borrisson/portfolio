@@ -1,7 +1,6 @@
 <section class="main items" *ngFor="let project of projects">
   <article class="item">
     <header>
-      <!-- This will be the bar chart project, tidy it up and it might be nice -->
       <a href="barChart/index.html"
         ><img src="assets/images/pic0{{ project.id }}.jpg" alt=""
       /></a>
@@ -11,7 +10,9 @@
       {{ project.description }}
     </p>
     <ul class="actions">
-      <li><a href="barChart/index.html" class="button">Repo</a></li>
+      <li>
+        <a href="barChart/index.html" class="button">{{ project.name }} Repo</a>
+      </li>
     </ul>
   </article>
 </section>
