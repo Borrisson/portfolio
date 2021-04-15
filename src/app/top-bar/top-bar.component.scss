@@ -60,25 +60,6 @@
   }
 }
 
-#header.alt:before {
-  -moz-transition: background-color 3s ease;
-  -webkit-transition: background-color 3s ease;
-  -ms-transition: background-color 3s ease;
-  transition: background-color 3s ease;
-  -moz-transition-delay: 1s;
-  -webkit-transition-delay: 1s;
-  -ms-transition-delay: 1s;
-  transition-delay: 1s;
-}
-
-#header.alt .inner {
-  -moz-transition: opacity 2s ease;
-  -webkit-transition: opacity 2s ease;
-  -ms-transition: opacity 2s ease;
-  transition: opacity 2s ease;
-  opacity: 1;
-}
-
 @media screen and (max-width: 1280px) {
   #header {
     background-attachment: scroll;
