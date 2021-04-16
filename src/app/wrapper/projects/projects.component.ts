@@ -19,19 +19,23 @@ export class ProjectsComponent implements OnInit {
   getRepoes(): void {
     this.repoService.getRepoes().then(
       (projects: Project[]) =>
-        (this.projects = projects.filter((project) => {
-          switch (project.name) {
-            case 'handloose':
-            case 'mapit':
-            case 'jungle':
-            case 'scheduler':
-            case 'tweeter':
-            case 'tinyapp':
-              return true;
-            default:
-              return false;
-          }
-        }))
+        (this.projects = projects
+          .filter((project) => {
+            switch (project.name) {
+              case 'handloose':
+              case 'mapit':
+              case 'jungle':
+              case 'scheduler':
+              case 'tweeter':
+              case 'tinyapp':
+                return true;
+              default:
+                return false;
+            }
+          })
+          .map(({ id, name, description, html_url }, index) => {
+            return { id: index + 1, name, description, html_url };
+          }))
     );
   }
 }
