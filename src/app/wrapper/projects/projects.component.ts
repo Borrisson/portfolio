@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { projects } from './projects';
+import { Project } from './project';
 import { RepoService } from '../../repo.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { RepoService } from '../../repo.service';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  projects;
+  projects: Project[];
 
   constructor(private repoService: RepoService) {}
   ngOnInit(): void {
@@ -17,6 +17,21 @@ export class ProjectsComponent implements OnInit {
   }
 
   getRepoes(): void {
-    this.repoService.getRepoes().then((res) => (this.projects = res));
+    this.repoService.getRepoes().then(
+      (projects: Project[]) =>
+        (this.projects = projects.filter((project) => {
+          switch (project.name) {
+            case 'handloose':
+            case 'mapit':
+            case 'jungle':
+            case 'scheduler':
+            case 'tweeter':
+            case 'tinyapp':
+              return true;
+            default:
+              return false;
+          }
+        }))
+    );
   }
 }

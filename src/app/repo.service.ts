@@ -18,6 +18,7 @@ export class RepoService {
     return this.http
       .get<{}[]>(this.repoesUrl)
       .toPromise()
+      .then((data) => data)
       .catch((err) => console.log(err));
   }
 }
