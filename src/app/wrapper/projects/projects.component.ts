@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { projects } from './projects';
+import { RepoService } from '../../repo.service';
 
 @Component({
   selector: 'app-projects',
@@ -8,7 +9,14 @@ import { projects } from './projects';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  projects: { id: number; name: string; description: string }[] = projects;
+  projects;
 
-  ngOnInit(): void {}
+  constructor(private repoService: RepoService) {}
+  ngOnInit(): void {
+    this.getRepoes();
+  }
+
+  getRepoes(): void {
+    this.repoService.getRepoes().then((res) => (this.projects = res));
+  }
 }
