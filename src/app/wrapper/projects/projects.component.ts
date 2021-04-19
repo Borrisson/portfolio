@@ -21,7 +21,7 @@ export class ProjectsComponent implements OnInit {
       (projects: Project[]) =>
         (this.projects = projects
           .filter((project) => {
-            switch (project.name) {
+            switch (project.name.toLowerCase()) {
               case 'handloose':
               case 'mapit':
               case 'jungle':
