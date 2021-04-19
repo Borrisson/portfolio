@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
+  faHtml5 = faHtml5;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
