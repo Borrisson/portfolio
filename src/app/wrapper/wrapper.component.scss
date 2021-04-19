@@ -20,29 +20,6 @@
   }
 }
 
-/* CTA */
-
-#cta {
-  padding: 2em 0 0.1em 0;
-  text-align: center;
-}
-
-@media screen and (max-width: 736px) {
-  #cta {
-    padding: 2em 2em 0.1em 2em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #cta {
-    padding: 2em 1em 0.1em 1em;
-  }
-
-  #cta p br {
-    display: none;
-  }
-}
-
 /* Footer */
 
 #footer {
