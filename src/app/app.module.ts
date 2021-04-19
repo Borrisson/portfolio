@@ -9,6 +9,7 @@ import { BannerComponent } from './wrapper/banner/banner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectsComponent } from './wrapper/projects/projects.component';
 import { CtaComponent } from './wrapper/cta/cta.component';
+import { FooterComponent } from './wrapper/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CtaComponent } from './wrapper/cta/cta.component';
     BannerComponent,
     ProjectsComponent,
     CtaComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FontAwesomeModule],
   providers: [],
