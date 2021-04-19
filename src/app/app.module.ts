@@ -8,6 +8,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { BannerComponent } from './wrapper/banner/banner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectsComponent } from './wrapper/projects/projects.component';
+import { CtaComponent } from './wrapper/cta/cta.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProjectsComponent } from './wrapper/projects/projects.component';
     WrapperComponent,
     BannerComponent,
     ProjectsComponent,
+    CtaComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FontAwesomeModule],
   providers: [],
