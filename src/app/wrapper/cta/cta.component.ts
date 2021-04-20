@@ -1,30 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cta',
   templateUrl: './cta.component.html',
   styleUrls: ['./cta.component.scss'],
 })
-export class CtaComponent implements OnInit {
+export class CtaComponent {
   languageIcons: string[];
   frameworkIcons: string[];
   mouseOvered = {};
 
-  constructor() {}
-
-  testForWordmark(classString: string): boolean {
-    if (/sass/.test(classString) || /javascript/.test(classString)) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-  removeWhiteSpace(concatenatedClassString: string): string {
-    return concatenatedClassString.replace(/\s+/g, '');
-  }
-
-  ngOnInit(): void {
+  constructor() {
     this.languageIcons = [
       'devicon-javascript-plain',
       'devicon-css3-plain',
@@ -42,5 +28,17 @@ export class CtaComponent implements OnInit {
       'devicon-redis-plain',
       'devicon-bootstrap-plain',
     ];
+  }
+
+  testForWordmark(classString: string): boolean {
+    if (/sass/.test(classString) || /javascript/.test(classString)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  removeWhiteSpace(concatenatedClassString: string): string {
+    return concatenatedClassString.replace(/\s+/g, '');
   }
 }

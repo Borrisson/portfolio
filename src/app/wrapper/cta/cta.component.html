@@ -6,15 +6,8 @@
       <div id="languages" class="container-row">
         <i
           *ngFor="let icon of languageIcons"
-          class="large"
-          [class.colored]="mouseOvered[icon]"
-          (mouseover)="mouseOvered[icon] = true"
-          (mouseout)="mouseOvered[icon] = false"
-          [ngClass]="
-            testForWordmark(icon) && mouseOvered[icon]
-              ? icon + '-wordmark'
-              : icon
-          "
+          class="large {{ icon }}"
+          appHoverClass
         ></i>
       </div>
     </div>
@@ -23,13 +16,8 @@
       <div id="frameworks" class="container-row">
         <i
           *ngFor="let icon of frameworkIcons"
-          class="large"
-          [class.colored]="mouseOvered[icon]"
-          (mouseover)="mouseOvered[icon] = true"
-          (mouseout)="mouseOvered[icon] = false"
-          [ngClass]="
-            mouseOvered[icon] ? removeWhiteSpace(icon + '-wordmark') : icon
-          "
+          class="large {{ icon }}"
+          appHoverClass
         ></i>
       </div>
     </div>

@@ -8,10 +8,22 @@ export class HoverClassDirective {
   @Input('appHoverClass') hoverClass: string;
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.el.nativeElement.classList.add(this.hoverClass);
+    const elClass = this.el.nativeElement.className.match(/devicon-(\w+)-\w+/);
+    this.el.nativeElement.classList.remove(elClass[0]);
+    this.el.nativeElement.classList.add(
+      `${elClass[0]}${
+        elClass[1] === 'sass' || elClass[1] === 'javascript' ? '' : '-wordmark'
+      }`
+    );
+    this.el.nativeElement.classList.add('colored');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.el.nativeElement.classList.remove(this.hoverClass);
+    this.el.nativeElement.classList.remove('colored');
+    const elClass = this.el.nativeElement.className.match(
+      /(devicon-\w+-\w+)(-wordmark)?/
+    );
+    this.el.nativeElement.classList.remove(elClass[0]);
+    this.el.nativeElement.classList.add(elClass[1]);
   }
 }
