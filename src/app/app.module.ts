@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectsComponent } from './wrapper/projects/projects.component';
 import { CtaComponent } from './wrapper/cta/cta.component';
 import { FooterComponent } from './wrapper/footer/footer.component';
+import { ColorizeDirective } from './wrapper/cta/colorize.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './wrapper/footer/footer.component';
     ProjectsComponent,
     CtaComponent,
     FooterComponent,
+    ColorizeDirective,
   ],
   imports: [BrowserModule, HttpClientModule, FontAwesomeModule],
   providers: [],
