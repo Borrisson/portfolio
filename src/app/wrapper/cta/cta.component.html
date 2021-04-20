@@ -4,30 +4,20 @@
     <div class="container-column">
       <h4>Languages</h4>
       <div id="languages" class="container-row">
-        <i appHoverClass="colored" class="devicon-javascript-plain large"></i>
-        <i appHoverClass="colored" class="devicon-css3-plain-wordmark large">
-        </i>
-        <i appHoverClass="colored" class="devicon-html5-plain-wordmark large">
-        </i>
-        <i appHoverClass="colored" class="devicon-ruby-plain large"></i>
-        <i appHoverClass="colored" class="devicon-sass-original large"></i>
-        <i appHoverClass="colored" class="devicon-postgresql-plain large"></i>
+        <i
+          appHoverClass="colored"
+          class="large {{ icon }}"
+          *ngFor="let icon of languageIcons"
+        ></i>
       </div>
     </div>
     <div class="container-column">
       <h4>Frameworks</h4>
       <div id="frameworks" class="container-row">
-        <i appHoverClass="colored" class="devicon-nodejs-plain large"></i>
-        <i appHoverClass="colored" class="devicon-express-original large"></i>
-        <i appHoverClass="colored" class="devicon-jquery-plain large"></i>
-        <i appHoverClass="colored" class="devicon-angularjs-plain large"></i>
-        <i appHoverClass="colored" class="devicon-react-original large"></i>
-        <i appHoverClass="colored" class="devicon-rails-plain large"></i>
-        <i appHoverClass="colored" class="devicon-redis-plain large"></i>
         <i
           appHoverClass="colored"
-          title="Bootstrap"
-          class="devicon-bootstrap-plain large"
+          class="large {{ icon }}"
+          *ngFor="let icon of frameworkIcons"
         ></i>
       </div>
     </div>
