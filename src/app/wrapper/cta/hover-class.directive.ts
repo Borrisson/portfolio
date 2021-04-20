@@ -8,7 +8,6 @@ export class HoverClassDirective {
   @Input('appHoverClass') hoverClass: string;
 
   @HostListener('mouseenter') onMouseEnter() {
-    console.log(this.hoverClass);
     this.el.nativeElement.classList.add(this.hoverClass);
   }
 
