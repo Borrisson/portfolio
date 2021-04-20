@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CtaComponent implements OnInit {
   languageIcons: string[];
   frameworkIcons: string[];
+  mouseOvered = {};
+
   constructor() {}
 
   ngOnInit(): void {

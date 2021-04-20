@@ -5,20 +5,18 @@
       <h4>Languages</h4>
       <div id="languages" class="container-row">
         <i
-          appHoverClass="colored"
+          *ngFor="let icon of languageIcons; let i = index"
+          [class.colored]="mouseOvered[i]"
+          (mouseover)="mouseOvered[i] = true"
+          (mouseout)="mouseOvered[i] = false"
           class="large {{ icon }}"
-          *ngFor="let icon of languageIcons"
         ></i>
       </div>
     </div>
     <div class="container-column">
       <h4>Frameworks</h4>
       <div id="frameworks" class="container-row">
-        <i
-          appHoverClass="colored"
-          class="large {{ icon }}"
-          *ngFor="let icon of frameworkIcons"
-        ></i>
+        <i class="large {{ icon }}" *ngFor="let icon of frameworkIcons"></i>
       </div>
     </div>
   </div>
