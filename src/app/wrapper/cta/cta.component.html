@@ -5,18 +5,32 @@
       <h4>Languages</h4>
       <div id="languages" class="container-row">
         <i
-          *ngFor="let icon of languageIcons; let i = index"
-          [class.colored]="mouseOvered[i]"
-          (mouseover)="mouseOvered[i] = true"
-          (mouseout)="mouseOvered[i] = false"
-          class="large {{ icon }}"
+          *ngFor="let icon of languageIcons"
+          class="large"
+          [class.colored]="mouseOvered[icon]"
+          (mouseover)="mouseOvered[icon] = true"
+          (mouseout)="mouseOvered[icon] = false"
+          [ngClass]="
+            testForWordmark(icon) && mouseOvered[icon]
+              ? icon + '-wordmark'
+              : icon
+          "
         ></i>
       </div>
     </div>
     <div class="container-column">
       <h4>Frameworks</h4>
       <div id="frameworks" class="container-row">
-        <i class="large {{ icon }}" *ngFor="let icon of frameworkIcons"></i>
+        <i
+          *ngFor="let icon of frameworkIcons"
+          class="large"
+          [class.colored]="mouseOvered[icon]"
+          (mouseover)="mouseOvered[icon] = true"
+          (mouseout)="mouseOvered[icon] = false"
+          [ngClass]="
+            mouseOvered[icon] ? removeWhiteSpace(icon + '-wordmark') : icon
+          "
+        ></i>
       </div>
     </div>
   </div>

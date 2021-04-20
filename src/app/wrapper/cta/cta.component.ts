@@ -12,11 +12,23 @@ export class CtaComponent implements OnInit {
 
   constructor() {}
 
+  testForWordmark(classString: string): boolean {
+    if (/sass/.test(classString) || /javascript/.test(classString)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  removeWhiteSpace(concatenatedClassString: string): string {
+    return concatenatedClassString.replace(/\s+/g, '');
+  }
+
   ngOnInit(): void {
     this.languageIcons = [
       'devicon-javascript-plain',
-      'devicon-css3-plain-wordmark',
-      'devicon-html5-plain-wordmark',
+      'devicon-css3-plain',
+      'devicon-html5-plain',
       'devicon-ruby-plain',
       'devicon-sass-original',
       'devicon-postgresql-plain',
