@@ -18,6 +18,12 @@
     &#html5 {
       color: $html5-color;
     }
+    &#sass {
+      color: $sass-color;
+    }
+    &#javascript {
+      color: $javascript-color;
+    }
   }
 
   @media screen and (max-width: 736px) {
