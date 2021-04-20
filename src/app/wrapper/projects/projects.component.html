@@ -1,7 +1,7 @@
 <section class="main items">
   <article class="item" *ngFor="let project of projects">
     <header>
-      <a href="barChart/index.html"
+      <a href="{{ project.html_url }}"
         ><img src="assets/images/pic0{{ project.id % 4 || 1 }}.jpg" alt=""
       /></a>
       <h3>{{ project.name }}</h3>
