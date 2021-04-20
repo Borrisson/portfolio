@@ -13,6 +13,7 @@ export class CtaComponent {
   constructor() {
     this.languageIcons = [
       'devicon-javascript-plain',
+      'devicon-typescript-plain',
       'devicon-css3-plain',
       'devicon-html5-plain',
       'devicon-ruby-plain',
@@ -28,17 +29,5 @@ export class CtaComponent {
       'devicon-redis-plain',
       'devicon-bootstrap-plain',
     ];
-  }
-
-  testForWordmark(classString: string): boolean {
-    if (/sass/.test(classString) || /javascript/.test(classString)) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-  removeWhiteSpace(concatenatedClassString: string): string {
-    return concatenatedClassString.replace(/\s+/g, '');
   }
 }

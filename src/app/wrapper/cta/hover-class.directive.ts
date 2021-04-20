@@ -12,7 +12,9 @@ export class HoverClassDirective {
     this.el.nativeElement.classList.remove(elClass[0]);
     this.el.nativeElement.classList.add(
       `${elClass[0]}${
-        elClass[1] === 'sass' || elClass[1] === 'javascript' ? '' : '-wordmark'
+        ['sass', 'javascript', 'typescript'].includes(elClass[1])
+          ? ''
+          : '-wordmark'
       }`
     );
     this.el.nativeElement.classList.add('colored');
