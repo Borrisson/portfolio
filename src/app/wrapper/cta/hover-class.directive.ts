@@ -1,9 +1,9 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[appColorize]'
+  selector: '[appHoverClass]'
 })
-export class ColorizeDirective {
+export class HoverClassDirective {
 
   constructor() { }
 
