@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 export class CtaComponent {
   languageIcons: string[];
   frameworkIcons: string[];
-  mouseOvered = {};
 
   constructor() {
     this.languageIcons = [
