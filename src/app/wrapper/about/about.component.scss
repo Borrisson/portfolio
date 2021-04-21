@@ -19,6 +19,20 @@
     object-fit: cover;
   }
 }
+
+@media screen and (max-width: 1070px) {
+  #about {
+    flex-direction: column;
+    img {
+      height: 50vh;
+      object-fit: scale-down;
+    }
+    article {
+      padding: 2em;
+    }
+  }
+}
+
 @media screen and (max-width: 736px) {
   #about {
     padding: 2em 2em 0.1em 0;
