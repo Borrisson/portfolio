@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-cta',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class CtaComponent {
   languageIcons: string[];
   frameworkIcons: string[];
-
+  faCheckCircle = faCheckCircle;
   constructor() {
     this.languageIcons = [
       'devicon-javascript-plain',
