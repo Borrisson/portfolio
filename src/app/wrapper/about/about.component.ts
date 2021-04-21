@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-about',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {
+  faUser = faUser;
   constructor() {}
 }
