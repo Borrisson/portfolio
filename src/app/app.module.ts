@@ -12,6 +12,7 @@ import { CtaComponent } from './wrapper/cta/cta.component';
 import { FooterComponent } from './footer/footer.component';
 import { HoverClassDirective } from './wrapper/cta/hover-class.directive';
 import { AboutComponent } from './wrapper/about/about.component';
+import { MessageFormComponent } from './wrapper/message-form/message-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AboutComponent } from './wrapper/about/about.component';
     FooterComponent,
     HoverClassDirective,
     AboutComponent,
+    MessageFormComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FontAwesomeModule],
   providers: [],
