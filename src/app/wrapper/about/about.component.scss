@@ -1,5 +1,4 @@
 #about {
-  padding: 4em 4em 2em 0;
   background-color: #ffffff;
   border-radius: 4px;
   text-align: center;
@@ -9,10 +8,15 @@
   align-items: center;
   overflow: hidden;
 
+  article {
+    padding: 5em;
+  }
+
   img {
+    float: left;
+    width: 50%;
+    height: 100vh;
     object-fit: cover;
-    min-width: 25%;
-    border-radius: 1% 1% 0 0;
   }
 }
 @media screen and (max-width: 736px) {
