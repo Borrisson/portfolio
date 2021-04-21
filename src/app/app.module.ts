@@ -9,7 +9,7 @@ import { BannerComponent } from './wrapper/banner/banner.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectsComponent } from './wrapper/projects/projects.component';
 import { CtaComponent } from './wrapper/cta/cta.component';
-import { FooterComponent } from './wrapper/footer/footer.component';
+import { FooterComponent } from './footer/footer.component';
 import { HoverClassDirective } from './wrapper/cta/hover-class.directive';
 import { AboutComponent } from './wrapper/about/about.component';
 
