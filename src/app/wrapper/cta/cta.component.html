@@ -5,9 +5,10 @@
     <div class="container-column">
       <h4>Languages</h4>
       <div id="languages" class="container-row">
+        <!-- <a href="{{}}"></a> -->
         <i
           *ngFor="let icon of languageIcons"
-          class="large {{ icon }}"
+          class="large devicon-{{ icon }}"
           appHoverClass
         ></i>
       </div>
@@ -17,7 +18,7 @@
       <div id="frameworks" class="container-row">
         <i
           *ngFor="let icon of frameworkIcons"
-          class="large {{ icon }}"
+          class="large devicon-{{ icon }}"
           appHoverClass
         ></i>
       </div>

@@ -12,22 +12,22 @@ export class CtaComponent {
   faCheckCircle = faCheckCircle;
   constructor() {
     this.languageIcons = [
-      'devicon-javascript-plain',
-      'devicon-typescript-plain',
-      'devicon-css3-plain',
-      'devicon-html5-plain',
-      'devicon-ruby-plain',
-      'devicon-sass-original',
-      'devicon-postgresql-plain',
+      'javascript-plain',
+      'typescript-plain',
+      'css3-plain',
+      'html5-plain',
+      'ruby-plain',
+      'sass-original',
+      'postgresql-plain',
     ];
     this.frameworkIcons = [
-      'devicon-nodejs-plain',
-      'devicon-jquery-plain ',
-      'devicon-angularjs-plain',
-      'devicon-react-original',
-      'devicon-rails-plain',
-      'devicon-redis-plain',
-      'devicon-bootstrap-plain',
+      'nodejs-plain',
+      'jquery-plain ',
+      'angularjs-plain',
+      'react-original',
+      'rails-plain',
+      'redis-plain',
+      'bootstrap-plain',
     ];
   }
 }
