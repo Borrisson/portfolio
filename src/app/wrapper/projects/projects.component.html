@@ -1,11 +1,18 @@
 <section class="main items">
   <article class="item" *ngFor="let project of projects">
     <header>
-      <a href="{{ project.html_url }}"
-        ><img
+      <a href="{{ project.html_url }}">
+        <img
+          *ngIf="project.name !== 'mapit'"
           src="assets/images/{{ project.name }}.gif"
           alt="{{ project.name }}"
-      /></a>
+        />
+        <img
+          *ngIf="project.name === 'mapit'"
+          src="assets/images/{{ project.name }}.png"
+          alt="{{ project.name }}"
+        />
+      </a>
       <h3>{{ project.name }}</h3>
     </header>
     <p>
