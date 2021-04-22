@@ -33,8 +33,8 @@ export class ProjectsComponent implements OnInit {
                 return false;
             }
           })
-          .map(({ id, name, description, html_url }, index) => {
-            return { id: index + 1, name, description, html_url };
+          .map(({ name, description, html_url }, id) => {
+            return { id, name, description, html_url };
           }))
     );
   }
