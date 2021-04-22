@@ -8,24 +8,10 @@ export class HoverClassDirective {
   @Input('appHoverClass') hoverClass: string;
 
   @HostListener('mouseenter') onMouseEnter() {
-    const elClass = this.el.nativeElement.className.match(/devicon-(\w+)-\w+/);
-    this.el.nativeElement.classList.remove(elClass[0]);
-    this.el.nativeElement.classList.add(
-      `${elClass[0]}${
-        ['sass', 'javascript', 'typescript'].includes(elClass[1])
-          ? ''
-          : '-wordmark'
-      }`
-    );
     this.el.nativeElement.classList.add('colored');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
     this.el.nativeElement.classList.remove('colored');
-    const elClass = this.el.nativeElement.className.match(
-      /(devicon-\w+-\w+)(-wordmark)?/
-    );
-    this.el.nativeElement.classList.remove(elClass[0]);
-    this.el.nativeElement.classList.add(elClass[1]);
   }
 }
