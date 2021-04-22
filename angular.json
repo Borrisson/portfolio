@@ -123,6 +123,10 @@
               "devServerTarget": "ang-portfolio:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
