@@ -30,4 +30,10 @@ export class CtaComponent {
       'bootstrap-plain',
     ];
   }
+  filterNameOnly(classname: string): string {
+    return (
+      classname.charAt(0).toUpperCase() +
+      classname.match(/(\w+)-(plain|original)?/)[1].slice(1)
+    );
+  }
 }

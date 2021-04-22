@@ -8,10 +8,10 @@ export class HoverClassDirective {
   @Input('appHoverClass') hoverClass: string;
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.el.nativeElement.classList.add('colored');
+    this.el.nativeElement.classList.add(this.hoverClass);
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.el.nativeElement.classList.remove('colored');
+    this.el.nativeElement.classList.remove(this.hoverClass);
   }
 }

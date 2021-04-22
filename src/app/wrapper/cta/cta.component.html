@@ -5,11 +5,11 @@
     <div class="container-column">
       <h4>Languages</h4>
       <div id="languages" class="container-row">
-        <!-- <a href="{{}}"></a> -->
         <i
+          title="{{ filterNameOnly(icon) }}"
           *ngFor="let icon of languageIcons"
           class="large devicon-{{ icon }}"
-          appHoverClass
+          appHoverClass="colored"
         ></i>
       </div>
     </div>
@@ -17,9 +17,10 @@
       <h4>Frameworks</h4>
       <div id="frameworks" class="container-row">
         <i
+          title="{{ filterNameOnly(icon) }}"
           *ngFor="let icon of frameworkIcons"
           class="large devicon-{{ icon }}"
-          appHoverClass
+          appHoverClass="colored"
         ></i>
       </div>
     </div>
