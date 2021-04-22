@@ -2,7 +2,7 @@
   <article class="item" *ngFor="let project of projects">
     <header>
       <a href="{{ project.html_url }}"
-        ><img src="assets/images/pic0{{ project.id % 4 || 1 }}.jpg" alt=""
+        ><img src="assets/images/pic0{{ project.id % 4 || 4 }}.jpg" alt=""
       /></a>
       <h3>{{ project.name }}</h3>
     </header>
