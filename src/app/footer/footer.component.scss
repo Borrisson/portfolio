@@ -7,13 +7,21 @@
     text-decoration: none;
     border-bottom: none;
     position: relative;
-    box-shadow: inset 0 0 0 2px #666666;
+    border: 3px solid #666666;
+    transition: box-shadow 0.5s, color 0.5s;
+    box-shadow: inset 0 0 0 50px white;
     width: 2em;
     line-height: 2em;
     display: inline-block;
     border-radius: 100%;
+    color: #666666;
     background: #666666;
-    color: white;
+    transition: box-shadow 0.5s, color 0.5s;
+    background-size: 0 0;
+    background-position: 50% 50%;
+    &:hover {
+      box-shadow: inset 0 0 0 0px white;
+    }
   }
 }
 
