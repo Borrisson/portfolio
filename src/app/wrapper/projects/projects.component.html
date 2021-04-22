@@ -2,7 +2,9 @@
   <article class="item" *ngFor="let project of projects">
     <header>
       <a href="{{ project.html_url }}"
-        ><img src="assets/images/handloose.gif" alt=""
+        ><img
+          src="assets/images/{{ project.name }}.gif"
+          alt="{{ project.name }}"
       /></a>
       <h3>{{ project.name }}</h3>
     </header>
