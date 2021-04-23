@@ -15,18 +15,19 @@
   img {
     float: left;
     width: 50%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
   }
 }
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 1178px) {
   #about {
     flex-direction: column;
     img {
-      height: 50vh;
+      height: 50%;
+      width: 25%;
       object-fit: scale-down;
-      border-radius: 1% 1% 0 0;
+      border-radius: 8%;
     }
     article {
       padding: 2em;
