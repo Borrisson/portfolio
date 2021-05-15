@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ContactService } from '../../contact.service';
 import { FormBuilder } from '@angular/forms';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +13,7 @@ export class ContactComponent {
     private ContactService: ContactService,
     private formBuilder: FormBuilder
   ) {}
-
+  faEnvelope = faEnvelope;
   contactForm = this.formBuilder.group({
     name: '',
     email: '',
