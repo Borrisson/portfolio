@@ -20,5 +20,10 @@ export class ContactComponent {
     message: '',
   });
 
-  handleSubmit(): void {}
+  handleSubmit(): void {
+    this.ContactService.sendContact(
+      'https://formspree.io/f/xzbyeged',
+      this.contactForm.value
+    );
+  }
 }

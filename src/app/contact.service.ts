@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
 export class ContactService {
   constructor(private http: HttpClient) {}
 
-  sendContact(event) {
+  sendContact(url: string, data: object) {
     this.http
-      .post(event.target.action, event.target.data)
+      .post(url, data)
       .toPromise()
       .then((data: {}) => console.log(data))
       .catch((err: {}) => console.log(err));
