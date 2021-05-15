@@ -21,10 +21,14 @@ export class ContactComponent {
   });
 
   handleSubmit(): void {
-    this.ContactService.sendContact(
-      'https://formspree.io/f/xzbyeged',
-      this.contactForm.value
-    );
-    this.contactForm.reset();
+    let { name, email, message } = this.contactForm.value;
+    if (name && email && message) {
+      this.ContactService.sendContact(
+        'https://formspree.io/f/xzbyeged',
+        this.contactForm.value
+      );
+      this.contactForm.reset();
+    } else {
+    }
   }
 }
