@@ -1,23 +1,18 @@
 <section id="contact" class="main">
-  <form
-    action="https://formspree.io/f/xzbyeged"
-    method="POST"
-    ngSubmit="$event.preventDefault()"
-    [formGroup]="contactForm"
-  >
+  <form (ngSubmit)="handleSubmit()" [formGroup]="contactForm">
     <h2>Contact</h2>
 
     <label> Email </label>
-    <input type="email" name="_replyto" required />
+    <input type="email" name="_replyto" formControlName="email" required />
 
     <label> Name </label>
-    <input type="text" name="_name" required />
+    <input type="text" name="_name" formControlName="name" required />
 
     <label> Subject </label>
-    <input type="email" name="_replyto" />
+    <input type="email" name="_replyto" formControlName="subject" />
 
     <label> Message </label>
-    <textarea name="message" required></textarea>
+    <textarea name="message" formControlName="message" required></textarea>
 
     <button>Send</button>
   </form>

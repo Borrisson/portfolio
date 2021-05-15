@@ -20,9 +20,5 @@ export class ContactComponent {
     message: '',
   });
 
-  handleSubmit(event): void {
-    console.log(event);
-    event.preventDefault();
-    this.ContactService.sendContact(event);
-  }
+  handleSubmit(): void {}
 }
