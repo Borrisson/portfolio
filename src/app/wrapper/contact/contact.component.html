@@ -1,5 +1,10 @@
 <section id="contact" class="main">
-  <form action="https://formspree.io/f/xzbyeged" method="POST">
+  <form
+    action="https://formspree.io/f/xzbyeged"
+    method="POST"
+    ngSubmit="$event.preventDefault()"
+    [formGroup]="contactForm"
+  >
     <h2>Contact</h2>
 
     <label> Email </label>
@@ -14,6 +19,6 @@
     <label> Message </label>
     <textarea name="message" required></textarea>
 
-    <button type="submit">Send</button>
+    <button>Send</button>
   </form>
 </section>
