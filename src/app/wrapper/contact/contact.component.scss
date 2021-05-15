@@ -6,11 +6,16 @@
   margin: 20px 0;
   form {
     margin: 0 25%;
-    label::after {
-      content: "*";
-      color: blue;
-      font-weight: bolder;
+
+    label {
+      text-align: left;
+      &:not(.not-required)::after {
+        content: "*";
+        color: blue;
+        font-weight: bolder;
+      }
     }
+
     button {
       margin: 20px 0;
     }
