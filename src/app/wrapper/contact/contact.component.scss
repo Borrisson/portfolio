@@ -41,4 +41,12 @@
       margin: 20px 0;
     }
   }
+  @media screen and (max-width: 1023px) {
+    form {
+      margin: 0;
+    }
+    button {
+      width: 100%;
+    }
+  }
 }
