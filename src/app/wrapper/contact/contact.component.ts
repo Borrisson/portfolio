@@ -22,7 +22,7 @@ export class ContactComponent {
   });
 
   handleSubmit(): void {
-    let { name, email, message } = this.contactForm.value;
+    const { name, email, message } = this.contactForm.value;
     if (name && email && message) {
       this.ContactService.sendContact(
         'https://formspree.io/f/xzbyeged',
