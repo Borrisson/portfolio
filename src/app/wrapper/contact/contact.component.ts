@@ -25,5 +25,6 @@ export class ContactComponent {
       'https://formspree.io/f/xzbyeged',
       this.contactForm.value
     );
+    this.contactForm.reset();
   }
 }
