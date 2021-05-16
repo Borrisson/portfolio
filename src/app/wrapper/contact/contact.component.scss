@@ -9,6 +9,14 @@
     border-bottom: none;
     position: relative;
 
+    &.success {
+      color: #009900;
+    }
+
+    &.danger {
+      color: #ff0000;
+    }
+
     &.major {
       display: block;
       margin: 0 0 1.5em 0;
