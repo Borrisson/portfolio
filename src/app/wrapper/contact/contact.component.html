@@ -5,24 +5,34 @@
 
     <label> Email </label>
     <input type="email" name="_replyto" formControlName="email" required />
-    <small *ngIf="email.errors.required && (email.dirty || email.touched)">
-      Please Enter a Valid Email
-    </small>
+    <div
+      *ngIf="email.invalid && (email.dirty || email.touched)"
+      class="text-danger"
+    >
+      <small *ngIf="email.errors?.required"> Please enter an email </small>
+      <small *ngIf="email.errors?.pattern"> Please enter a valid email</small>
+    </div>
 
     <label> Name </label>
     <input type="text" name="_name" formControlName="name" required />
-    <small *ngIf="name.errors.required && (name.dirty || name.touched)">
-      Please add a name
-    </small>
+    <div
+      *ngIf="name.invalid && (name.dirty || name.touched)"
+      class="text-danger"
+    >
+      <small *ngIf="name.errors?.required"> Please add a name </small>
+    </div>
 
     <label> Subject </label>
     <input type="email" name="_replyto" formControlName="subject" />
 
     <label> Message </label>
     <textarea name="message" formControlName="message" required></textarea>
-    <div *ngIf="message.invalid && (message.dirty || message.touched)">
-      <small *ngIf="message.errors.required">Please add a brief message</small>
-      <small *ngIf="message.errors.minlength">
+    <div
+      *ngIf="message.invalid && (message.dirty || message.touched)"
+      class="text-danger"
+    >
+      <small *ngIf="message.errors?.required">Please add a brief message</small>
+      <small *ngIf="message.errors?.minlength">
         Please add a message of at least 10 characters.
       </small>
     </div>

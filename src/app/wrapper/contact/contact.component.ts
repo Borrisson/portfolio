@@ -13,10 +13,13 @@ export class ContactComponent {
   faEnvelope = faEnvelope;
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
-    email: new FormControl('', [
-      Validators.required,
-      Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
-    ]),
+    email: new FormControl('', {
+      validators: [
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      ],
+      updateOn: 'blur',
+    }),
     subject: new FormControl(''),
     message: new FormControl('', [
       Validators.required,
@@ -37,10 +40,13 @@ export class ContactComponent {
   }
 
   handleSubmit(): void {
-    this.ContactService.sendContact(
-      'https://formspree.io/f/xzbyeged',
-      this.contactForm.value
-    );
-    this.contactForm.reset();
+    const { name, email, message } = this.contactForm.value;
+    if (name && email && message) {
+      this.ContactService.sendContact(
+        'https://formspree.io/f/xzbyeged',
+        this.contactForm.value
+      );
+      this.contactForm.reset();
+    }
   }
 }
