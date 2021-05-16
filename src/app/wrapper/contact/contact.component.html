@@ -1,8 +1,7 @@
 <section id="contact" class="main">
+  <fa-icon [icon]="faEnvelope" class="icon major"></fa-icon>
+  <h2>Contact</h2>
   <form (ngSubmit)="handleSubmit()" [formGroup]="contactForm">
-    <fa-icon [icon]="faEnvelope" class="icon major"></fa-icon>
-    <h2>Contact</h2>
-
     <label> Email </label>
     <input type="email" name="_replyto" formControlName="email" required />
     <div *ngIf="email.invalid && (email.dirty || email.touched)">

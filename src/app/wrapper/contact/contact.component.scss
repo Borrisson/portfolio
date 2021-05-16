@@ -4,29 +4,29 @@
   border-radius: 4px;
   text-align: center;
   margin: 20px 0;
+  .icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+
+    &.major {
+      display: block;
+      margin: 0 0 1.5em 0;
+      cursor: default;
+      font-size: 2.5rem;
+      box-shadow: inset 0 0 0 2px #666666;
+      width: 2.5em;
+      line-height: 2.5em;
+      display: inline-block;
+      border-radius: 100%;
+      color: #666666;
+    }
+  }
   form {
     margin: 0 25%;
-    .icon {
-      text-decoration: none;
-      border-bottom: none;
-      position: relative;
-
-      &.major {
-        display: block;
-        margin: 0 0 1.5em 0;
-        cursor: default;
-        font-size: 2.5rem;
-        box-shadow: inset 0 0 0 2px #666666;
-        width: 2.5em;
-        line-height: 2.5em;
-        display: inline-block;
-        border-radius: 100%;
-        color: #666666;
-      }
-    }
+    text-align: left;
 
     label {
-      text-align: left;
       &:not(:nth-of-type(3))::after {
         content: "*";
         color: blue;
@@ -39,6 +39,10 @@
 
     button {
       margin: 20px 0;
+      text-align: center;
+    }
+    .text-danger {
+      color: #ff0000;
     }
   }
   @media screen and (max-width: 1023px) {
