@@ -39,6 +39,9 @@
     textarea,
     input {
       resize: none;
+      &.ng-valid {
+        border-color: #009900;
+      }
       &.ng-invalid {
         &:focus {
           border-color: inherit;
