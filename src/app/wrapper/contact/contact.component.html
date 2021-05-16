@@ -26,7 +26,12 @@
     <input type="email" name="_replyto" formControlName="subject" />
 
     <label> Message </label>
-    <textarea name="message" formControlName="message" required></textarea>
+    <textarea
+      name="message"
+      formControlName="message"
+      maxlength="1000"
+      required
+    ></textarea>
     <div *ngIf="message.invalid && (message.dirty || message.touched)">
       <small *ngIf="message.errors?.required" class="text-danger"
         >Please add a brief message

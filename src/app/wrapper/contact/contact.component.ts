@@ -21,10 +21,14 @@ export class ContactComponent {
       updateOn: 'blur',
     }),
     subject: new FormControl(''),
-    message: new FormControl('', [
-      Validators.required,
-      Validators.minLength(10),
-    ]),
+    message: new FormControl('', {
+      validators: [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(1000),
+      ],
+      updateOn: 'change',
+    }),
   });
 
   get email() {
