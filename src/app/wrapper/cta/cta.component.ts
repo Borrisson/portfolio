@@ -28,6 +28,7 @@ export class CtaComponent {
       'rails-plain',
       'redis-plain',
       'bootstrap-plain',
+      'express-original',
     ];
   }
   filterNameOnly(classname: string): string {
