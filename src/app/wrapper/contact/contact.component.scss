@@ -23,7 +23,10 @@
     }
   }
   form {
+    display: flex;
+    flex-direction: column;
     margin: 0 25%;
+    justify-content: center;
     text-align: left;
 
     label {
@@ -38,19 +41,22 @@
     }
 
     button {
-      margin: 20px 0;
-      text-align: center;
+      margin: 20px 33%;
+      width: 33%;
     }
-    .text-danger {
-      color: #ff0000;
+    div {
+      small.text-danger {
+        color: #ff0000;
+      }
     }
   }
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 767px) {
     form {
       margin: 0;
-    }
-    button {
-      width: 100%;
+      button {
+        margin: 20px 0;
+        width: 100%;
+      }
     }
   }
 }
