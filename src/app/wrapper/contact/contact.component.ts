@@ -15,7 +15,10 @@ export class ContactComponent {
     name: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
     subject: new FormControl(''),
-    message: new FormControl('', Validators.required),
+    message: new FormControl('', [
+      Validators.required,
+      Validators.minLength(10),
+    ]),
   });
 
   get email() {
