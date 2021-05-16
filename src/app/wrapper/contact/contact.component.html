@@ -2,7 +2,26 @@
   <fa-icon [icon]="faEnvelope" class="icon major"></fa-icon>
   <h2>Contact</h2>
 
-  <form (ngSubmit)="handleSubmit()" [formGroup]="contactForm">
+  <div *ngIf="showErrMsg && !submit">
+    <p>
+      <strong>
+        Something went wrong sending your message. You can try sending your
+        message
+        <a
+          href="mailto:lucborris@gmail.com?subject={{
+            subject.value || 'Let\'s get in touch'
+          }}&body={{ message.value }}"
+          >here</a
+        >.
+      </strong>
+    </p>
+  </div>
+
+  <form
+    *ngIf="!submit; else showMsg"
+    (ngSubmit)="handleSubmit()"
+    [formGroup]="contactForm"
+  >
     <label> Email </label>
 
     <div class="form-input">
@@ -92,4 +111,7 @@
 
     <button>Send</button>
   </form>
+  <ng-template #showMsg>
+    <p><strong>Your message has been sent. Thank You.</strong></p>
+  </ng-template>
 </section>

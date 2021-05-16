@@ -14,6 +14,8 @@ export class ContactComponent {
   faEnvelope = faEnvelope;
   faTimes = faTimes;
   faCheck = faCheck;
+  submit = false;
+  showErrMsg = false;
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', {
@@ -46,14 +48,21 @@ export class ContactComponent {
     return this.contactForm.get('message');
   }
 
+  get subject() {
+    return this.contactForm.get('subject');
+  }
+
   handleSubmit(): void {
-    const { name, email, message } = this.contactForm.value;
-    if (name && email && message) {
+    if (this.contactForm.valid) {
       this.ContactService.sendContact(
         'https://formspree.io/f/xzbyeged',
         this.contactForm.value
-      );
-      this.contactForm.reset();
+      )
+        .then(() => {
+          this.submit = true;
+          this.contactForm.reset();
+        })
+        .catch(() => (this.showErrMsg = true));
     }
   }
 }
