@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ContactService } from '../../contact.service';
-import { FormBuilder } from '@angular/forms';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
@@ -9,16 +9,13 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-  constructor(
-    private ContactService: ContactService,
-    private formBuilder: FormBuilder
-  ) {}
+  constructor(private ContactService: ContactService) {}
   faEnvelope = faEnvelope;
-  contactForm = this.formBuilder.group({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+  contactForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    subject: new FormControl(''),
+    message: new FormControl('', Validators.required),
   });
 
   handleSubmit(): void {
