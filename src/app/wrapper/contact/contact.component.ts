@@ -18,6 +18,18 @@ export class ContactComponent {
     message: new FormControl('', Validators.required),
   });
 
+  get email() {
+    return this.contactForm.get('email');
+  }
+
+  get name() {
+    return this.contactForm.get('name');
+  }
+
+  get message() {
+    return this.contactForm.get('message');
+  }
+
   handleSubmit(): void {
     const { name, email, message } = this.contactForm.value;
     if (name && email && message) {
