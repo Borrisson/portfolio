@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ContactService } from '../../contact.service';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,8 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 export class ContactComponent {
   constructor(private ContactService: ContactService) {}
   faEnvelope = faEnvelope;
+  faTimes = faTimes;
+  faCheck = faCheck;
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', {
