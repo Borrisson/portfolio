@@ -29,7 +29,7 @@
     <textarea
       name="message"
       formControlName="message"
-      maxlength="12"
+      maxlength="1000"
       required
     ></textarea>
     <div *ngIf="message.invalid && (message.dirty || message.touched)">
@@ -37,10 +37,10 @@
         >Please add a brief message
       </small>
       <small *ngIf="message.errors?.minlength" class="text-danger">
-        Please add a message of at least 10 characters.
+        Please add a message of at least 10 characters
       </small>
       <small *ngIf="message.errors?.maxlength" class="text-danger">
-        You have reached the maximum allowable characters of 1000
+        You have reached the 1000 character limit
       </small>
     </div>
 
