@@ -24,9 +24,9 @@ export class TopBarComponent implements AfterViewInit {
       this.currentPosition = ++this.currentPosition % 3;
       const active = this.positions[this.currentPosition].split('');
 
-      const innerInterval = setInterval(() => {
+      const charArrayInterval = setInterval(() => {
         if (!active[0]) {
-          clearInterval(innerInterval);
+          clearInterval(charArrayInterval);
         } else {
           this.title.nativeElement.textContent += active.shift();
         }
