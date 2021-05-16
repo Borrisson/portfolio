@@ -61,9 +61,6 @@
           border-color: #009900;
         }
         &.ng-invalid {
-          &:focus {
-            border-color: inherit;
-          }
           border-color: #ff0000;
         }
         &.ng-untouched {
