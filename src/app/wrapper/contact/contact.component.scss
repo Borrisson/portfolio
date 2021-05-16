@@ -36,8 +36,18 @@
         font-weight: bolder;
       }
     }
-    textarea {
+    textarea,
+    input {
       resize: none;
+      &.ng-invalid {
+        &:focus {
+          border-color: inherit;
+        }
+        border-color: #ff0000;
+      }
+      &.ng-untouched {
+        border-color: inherit;
+      }
     }
 
     button {
