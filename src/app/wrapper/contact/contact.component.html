@@ -5,18 +5,22 @@
 
     <label> Email </label>
     <input type="email" name="_replyto" formControlName="email" required />
-    <div *ngIf="email.errors.required">Please Enter a Valid Email</div>
+    <div *ngIf="email.errors.required && (email.dirty || email.touched)">
+      Please Enter a Valid Email
+    </div>
 
     <label> Name </label>
     <input type="text" name="_name" formControlName="name" required />
-    <div *ngIf="name.errors.required">Please add a name</div>
+    <div *ngIf="name.errors.required && (name.dirty || name.touched)">
+      Please add a name
+    </div>
 
     <label> Subject </label>
     <input type="email" name="_replyto" formControlName="subject" />
 
     <label> Message </label>
     <textarea name="message" formControlName="message" required></textarea>
-    <div *ngIf="message.invalid">
+    <div *ngIf="message.invalid && (message.dirty || message.touched)">
       <div *ngIf="message.errors.required">Please add a brief message</div>
       <div *ngIf="message.errors.minlength">
         Please add a message of at least 10 characters.
