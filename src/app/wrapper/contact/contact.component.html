@@ -1,9 +1,26 @@
 <section id="contact" class="main">
   <fa-icon [icon]="faEnvelope" class="icon major"></fa-icon>
   <h2>Contact</h2>
+
   <form (ngSubmit)="handleSubmit()" [formGroup]="contactForm">
     <label> Email </label>
-    <input type="email" name="_replyto" formControlName="email" required />
+
+    <div class="form-input">
+      <input type="email" name="_replyto" formControlName="email" required />
+      <fa-icon
+        [icon]="faCheck"
+        class="icon success"
+        *ngIf="email.valid && email.dirty"
+      ></fa-icon>
+      <fa-icon
+        [icon]="faTimes"
+        class="icon danger"
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+      ></fa-icon>
+    </div>
+
+    <!-- Error Message for email -->
+
     <div *ngIf="email.invalid && (email.dirty || email.touched)">
       <small *ngIf="email.errors?.required" class="text-danger">
         Please enter an email
@@ -14,7 +31,22 @@
     </div>
 
     <label> Name </label>
-    <input type="text" name="_name" formControlName="name" required />
+    <div class="form-input">
+      <input type="text" name="_name" formControlName="name" required />
+      <fa-icon
+        [icon]="faCheck"
+        class="icon success"
+        *ngIf="name.valid && name.dirty"
+      ></fa-icon>
+      <fa-icon
+        [icon]="faTimes"
+        class="icon danger"
+        *ngIf="name.invalid && (name.dirty || name.touched)"
+      ></fa-icon>
+    </div>
+
+    <!-- Error Message for name -->
+
     <div *ngIf="name.invalid && (name.dirty || name.touched)">
       <small *ngIf="name.errors?.required" class="text-danger">
         Please add a name
@@ -22,15 +54,30 @@
     </div>
 
     <label> Subject </label>
-    <input type="email" name="_replyto" formControlName="subject" />
+    <input type="text" name="_subject" formControlName="subject" />
 
     <label> Message </label>
-    <textarea
-      name="message"
-      formControlName="message"
-      maxlength="1000"
-      required
-    ></textarea>
+    <div class="form-input">
+      <textarea
+        name="message"
+        formControlName="message"
+        maxlength="1000"
+        required
+      ></textarea>
+      <fa-icon
+        [icon]="faCheck"
+        class="icon success"
+        *ngIf="message.valid && message.dirty"
+      ></fa-icon>
+      <fa-icon
+        [icon]="faTimes"
+        class="icon danger"
+        *ngIf="message.invalid && (message.dirty || message.touched)"
+      ></fa-icon>
+    </div>
+
+    <!-- Error Message for message -->
+
     <div *ngIf="message.invalid && (message.dirty || message.touched)">
       <small *ngIf="message.errors?.required" class="text-danger"
         >Please add a brief message
