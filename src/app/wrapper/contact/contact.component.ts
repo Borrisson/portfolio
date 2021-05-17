@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ContactService } from '../../contact.service';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
@@ -10,12 +10,21 @@ import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-  constructor(private ContactService: ContactService) {}
+  @ViewChild('textarea') textarea: ElementRef;
+
+  constructor(private ContactService: ContactService) {
+    this.contactForm.valueChanges.subscribe((value) => {
+      this.textarea.nativeElement.style.height = 'auto';
+      this.textarea.nativeElement.style.height = `${this.textarea.nativeElement.scrollHeight}px`;
+    });
+  }
+
   faEnvelope = faEnvelope;
   faTimes = faTimes;
   faCheck = faCheck;
   submit = false;
   showErrMsg = false;
+
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', {

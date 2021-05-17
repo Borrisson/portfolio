@@ -57,6 +57,7 @@
       textarea,
       input {
         resize: none;
+        overflow: hidden;
         &.ng-valid {
           border-color: #009900;
         }
