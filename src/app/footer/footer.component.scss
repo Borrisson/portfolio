@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 #footer {
   text-align: center;
   margin: 4em 0;
@@ -7,20 +9,20 @@
     text-decoration: none;
     border-bottom: none;
     position: relative;
-    border: 1px solid #666666;
+    border: 1px solid $icon-color;
     transition: box-shadow 0.5s, color 0.5s;
-    box-shadow: inset 0 0 0 50px white;
+    box-shadow: inset 0 0 0 50px $primary-bg-color;
     width: 2em;
     line-height: 2em;
     display: inline-block;
     border-radius: 100%;
-    color: #666666;
-    background: #666666;
+    color: $icon-color;
+    background: $icon-color;
     transition: box-shadow 0.5s, color 0.5s;
     background-size: 0 0;
     background-position: 50% 50%;
     &:hover {
-      box-shadow: inset 0 0 0 0px white;
+      box-shadow: inset 0 0 0 0px $primary-bg-color;
     }
   }
 }
@@ -34,7 +36,7 @@
   display: inline-block;
   width: 6em;
   height: 2px;
-  background-color: #666666;
+  background-color: $icon-color;
   margin-bottom: 4em;
 }
 
