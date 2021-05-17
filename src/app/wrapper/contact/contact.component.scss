@@ -2,33 +2,9 @@
 
 #contact {
   @include blocks;
+  @include icons;
   margin: 20px 0;
-  .icon {
-    text-decoration: none;
-    border-bottom: none;
-    position: relative;
 
-    &.success {
-      color: $success-color;
-    }
-
-    &.danger {
-      color: $danger-color;
-    }
-
-    &.major {
-      display: block;
-      margin: 0 0 1.5em 0;
-      cursor: default;
-      font-size: 2.5rem;
-      box-shadow: inset 0 0 0 2px $icon-color;
-      width: 2.5em;
-      line-height: 2.5em;
-      display: inline-block;
-      border-radius: 100%;
-      color: $icon-color;
-    }
-  }
   form {
     display: flex;
     flex-direction: column;

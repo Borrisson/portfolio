@@ -25,6 +25,13 @@
       border-radius: 100%;
       color: $icon-color;
     }
+    &.success {
+      color: $success-color;
+    }
+
+    &.danger {
+      color: $danger-color;
+    }
   }
 
   @media screen and (max-width: 736px) {
