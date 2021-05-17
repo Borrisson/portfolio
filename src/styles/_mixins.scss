@@ -1,0 +1,9 @@
+@import "./variables";
+
+@mixin blocks {
+  padding: 4em 4em 2em 4em;
+  background-color: $primary-bg-color;
+  border-radius: 4px;
+  text-align: center;
+  margin: 20px 0;
+}
