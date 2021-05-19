@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class RepoService {
   private repoesUrl =
-    'https://api.github.com/users/Borrisson/repos?sort=created&per_page=20';
+    'https://api.github.com/users/Borrisson/repos?sort=created&per_page=all';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
