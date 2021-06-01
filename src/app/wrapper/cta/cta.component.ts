@@ -9,6 +9,7 @@ import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 export class CtaComponent {
   languageIcons: string[];
   frameworkIcons: string[];
+  databaseIcons: string[];
   faCheckCircle = faCheckCircle;
   constructor() {
     this.languageIcons = [
@@ -18,7 +19,6 @@ export class CtaComponent {
       'html5-plain',
       'ruby-plain',
       'sass-original',
-      'postgresql-plain',
     ];
     this.frameworkIcons = [
       'nodejs-plain',
@@ -29,7 +29,9 @@ export class CtaComponent {
       'redis-plain',
       'bootstrap-plain',
       'express-original',
+      'nextjs-plain',
     ];
+    this.databaseIcons = ['mongodb-plain', 'postgresql-plain'];
   }
   filterNameOnly(classname: string): string {
     return (

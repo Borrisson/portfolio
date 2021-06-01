@@ -24,5 +24,16 @@
         ></i>
       </div>
     </div>
+    <div class="container-column">
+      <h4>Databases</h4>
+      <div id="databases" class="container-row">
+        <i
+          title="{{ filterNameOnly(icon) }}"
+          *ngFor="let icon of databaseIcons"
+          class="large devicon-{{ icon }} devicon"
+          appHoverClass="colored"
+        ></i>
+      </div>
+    </div>
   </div>
 </section>
