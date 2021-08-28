@@ -1,9 +1,20 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnChanges,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ContactService } from '../../contact.service';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
-
+interface IContactForm {
+  message: string;
+  subject: string;
+  name: string;
+  email: string;
+}
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -13,9 +24,11 @@ export class ContactComponent {
   @ViewChild('textarea') textarea: ElementRef;
 
   constructor(private ContactService: ContactService) {
-    this.contactForm.valueChanges.subscribe((value) => {
+    this.contactForm.valueChanges.subscribe((value: IContactForm) => {
       this.textarea.nativeElement.style.height = 'auto';
       this.textarea.nativeElement.style.height = `${this.textarea.nativeElement.scrollHeight}px`;
+      localStorage.setItem('message', value.message);
+      localStorage.setItem('subject', value.subject);
     });
   }
 
@@ -24,6 +37,8 @@ export class ContactComponent {
   faCheck = faCheck;
   submit = false;
   showErrMsg = false;
+  messageValue = localStorage.getItem('message');
+  subjectValue = localStorage.getItem('subject');
 
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -34,8 +49,8 @@ export class ContactComponent {
       ],
       updateOn: 'blur',
     }),
-    subject: new FormControl(''),
-    message: new FormControl('', {
+    subject: new FormControl(this.subjectValue || ''),
+    message: new FormControl(this.messageValue || '', {
       validators: [
         Validators.required,
         Validators.minLength(10),
