@@ -14,10 +14,10 @@
   "dependencies": {
     "@angular/animations": "~13.1.2",
     "@angular/common": "~13.1.2",
-    "@angular/compiler": "~12.2.15",
-    "@angular/core": "~12.2.15",
+    "@angular/compiler": "~13.1.2",
+    "@angular/core": "~13.1.2",
     "@angular/fire": "^6.1.5",
-    "@angular/forms": "~12.2.15",
+    "@angular/forms": "~13.1.2",
     "@angular/platform-browser": "~13.1.2",
     "@angular/platform-browser-dynamic": "~13.1.2",
     "@angular/router": "~13.1.2",
@@ -54,6 +54,6 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.3.5"
+    "typescript": "~4.5.4"
   }
 }
