@@ -6,11 +6,13 @@
           *ngIf="project.name !== 'mapit'"
           src="assets/images/{{ project.name }}.gif"
           alt="{{ project.name }}"
+          loading="lazy"
         />
         <img
           *ngIf="project.name === 'mapit'"
           src="assets/images/{{ project.name }}.png"
           alt="{{ project.name }}"
+          loading="lazy"
         />
       </a>
       <h3>{{ project.name }}</h3>
