@@ -30,6 +30,7 @@ export class CtaComponent {
       'bootstrap-plain',
       'express-original',
       'nextjs-plain',
+      'redux-original'
     ];
     this.databaseIcons = ['mongodb-plain', 'postgresql-plain'];
   }
