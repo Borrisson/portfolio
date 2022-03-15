@@ -148,18 +148,6 @@
   }
 }
 
-@media screen and (max-width: 480px) {
-  .item {
-    padding: 2em 1em 0.1em 1em;
-  }
-
-  .item header {
-    height: 12em;
-    margin: -2em 0 2em -1em;
-    width: calc(100% + 2em);
-  }
-}
-
 ul.actions {
   cursor: default;
   list-style: none;
@@ -254,5 +242,19 @@ ul.actions.fit.small li {
 
   ul.actions.small li:first-child {
     padding-top: 0;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .item {
+    padding: 2em 1em 0.1em 1em;
+  }
+
+  .item header {
+    height: 12em;
+    margin: -2em 0 2em -1em;
+    width: calc(100% + 2em);
   }
 }
