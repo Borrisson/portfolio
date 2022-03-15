@@ -19,6 +19,7 @@ export class CtaComponent {
       'html5-plain',
       'ruby-plain',
       'sass-original',
+      'groovy-plain'
     ];
     this.frameworkIcons = [
       'nodejs-plain',
