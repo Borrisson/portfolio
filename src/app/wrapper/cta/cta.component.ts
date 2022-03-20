@@ -29,7 +29,9 @@ export class CtaComponent {
       'rails-plain',
       'redis-plain',
       'bootstrap-plain',
+      'materialui-plain',
       'express-original',
+      'grails-plain',
       'nextjs-plain',
       'redux-original'
     ];
