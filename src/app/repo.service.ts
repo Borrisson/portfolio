@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Project } from './wrapper/projects/project';
+import { IProject } from './wrapper/projects/project';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +16,6 @@ export class RepoService {
   constructor(private http: HttpClient) {}
 
   getRepoes() {
-    return this.http.get<Project[]>(this.repoesUrl, {observe: 'body', responseType: 'json'})
+    return this.http.get<IProject[]>(this.repoesUrl, {observe: 'body', responseType: 'json'})
   }
 }

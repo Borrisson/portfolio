@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Project } from './project';
+import { IProject } from './project';
 import { RepoService } from '../../repo.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { RepoService } from '../../repo.service';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  projects: Project[];
+  projects: IProject[];
 
   constructor(private repoService: RepoService) {}
   ngOnInit(): void {
@@ -18,7 +18,7 @@ export class ProjectsComponent implements OnInit {
 
   showRepoes(): void {
     this.repoService.getRepoes().subscribe(
-      (projects: Project[]) =>
+      (projects: IProject[]) =>
         (this.projects = projects
           .filter((project) => {
             switch (project.name.toLowerCase()) {
