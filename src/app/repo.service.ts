@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Project } from './wrapper/projects/project';
 
 @Injectable({
   providedIn: 'root',
@@ -15,10 +16,6 @@ export class RepoService {
   constructor(private http: HttpClient) {}
 
   getRepoes() {
-    return this.http
-      .get<{}[]>(this.repoesUrl)
-      .toPromise()
-      .then((data) => data)
-      .catch((err) => console.log(err));
+    return this.http.get<Project[]>(this.repoesUrl, {observe: 'body', responseType: 'json'})
   }
 }

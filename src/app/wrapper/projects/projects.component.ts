@@ -13,11 +13,11 @@ export class ProjectsComponent implements OnInit {
 
   constructor(private repoService: RepoService) {}
   ngOnInit(): void {
-    this.getRepoes();
+    this.showRepoes();
   }
 
-  getRepoes(): void {
-    this.repoService.getRepoes().then(
+  showRepoes(): void {
+    this.repoService.getRepoes().subscribe(
       (projects: Project[]) =>
         (this.projects = projects
           .filter((project) => {
