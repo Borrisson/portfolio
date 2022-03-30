@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:200,400");
+@import "./styles/mixins";
 
 /* Reset */
 
@@ -378,7 +379,7 @@ a {
 }
 
 a:hover {
-  color: #ef6480 !important;
+  color: $border-color !important;
 }
 
 strong,
@@ -527,8 +528,8 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover,
 .button:hover {
-  color: #ef6480 !important;
-  box-shadow: inset 0 0 0 2px #ef6480;
+  color: $border-color !important;
+  box-shadow: inset 0 0 0 2px $border-color;
 }
 
 input[type="submit"]:active,
@@ -731,8 +732,8 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #ef6480;
-  box-shadow: 0 0 0 1px #ef6480;
+  border-color: $border-color;
+  @include softShadow($border-color);
 }
 
 .select-wrapper:before {
@@ -752,15 +753,15 @@ input[type="radio"] + label:before {
 
 input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
-  background-color: #ef6480;
-  border-color: #ef6480;
+  background-color: $border-color;
+  border-color: $border-color;
   color: #ffffff;
 }
 
 input[type="checkbox"]:focus + label:before,
 input[type="radio"]:focus + label:before {
-  border-color: #ef6480;
-  box-shadow: 0 0 0 1px #ef6480;
+  border-color: $border-color;
+  box-shadow: 0 0 0 1px $border-color;
 }
 
 ::-webkit-input-placeholder {

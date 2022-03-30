@@ -12,12 +12,10 @@
     justify-content: center;
     text-align: left;
 
-    label {
-      &:not(:nth-of-type(3))::after {
-        content: "*";
-        color: $required-color;
-        font-weight: bolder;
-      }
+    label:not(:nth-of-type(3))::after {
+      content: "*";
+      color: $required-color;
+      font-weight: bolder;
     }
 
     .form-input {
@@ -35,12 +33,22 @@
         overflow: hidden;
         &.ng-valid {
           border-color: $success-color;
+          &:focus {
+            @include softShadow($success-color);
+          }
         }
         &.ng-invalid {
           border-color: $danger-color;
+          &:focus {
+            @include softShadow($danger-color);
+          }
         }
         &.ng-untouched {
           border-color: inherit;
+          &:focus {
+            border-color: $border-color;
+            @include softShadow($border-color);
+          }
         }
       }
     }
