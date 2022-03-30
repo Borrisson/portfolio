@@ -9,12 +9,10 @@ import { ContactService } from '../../contact.service';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
-interface IContactForm {
-  message: string;
-  subject: string;
-  name: string;
-  email: string;
-}
+import { HttpErrorResponse } from '@angular/common/http';
+import { catchError, throwError } from 'rxjs';
+import { IContactForm } from './contact';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -76,17 +74,21 @@ export class ContactComponent {
     return this.contactForm.get('subject');
   }
 
-  handleSubmit(): void {
+  handleSubmit() {
     if (this.contactForm.valid) {
       this.ContactService.sendContact(
         'https://formspree.io/f/xzbyeged',
         this.contactForm.value
-      )
-        .then(() => {
+      ).subscribe({
+        next() {
           this.submit = true;
+          this.showErrMsg = false;
           this.contactForm.reset();
-        })
-        .catch(() => (this.showErrMsg = true));
+        },
+        error() {
+          this.showErrMsg = true;
+        },
+      });
     }
   }
 }
