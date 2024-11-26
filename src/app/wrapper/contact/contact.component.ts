@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ContactService } from '../../contact.service';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormControl, Validators, UntypedFormGroup } from '@angular/forms';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -38,17 +38,17 @@ export class ContactComponent {
   messageValue = localStorage.getItem('message');
   subjectValue = localStorage.getItem('subject');
 
-  contactForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', {
+  contactForm = new UntypedFormGroup({
+    name: new UntypedFormControl('', Validators.required),
+    email: new UntypedFormControl('', {
       validators: [
         Validators.required,
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
       ],
       updateOn: 'blur',
     }),
-    subject: new FormControl(this.subjectValue || ''),
-    message: new FormControl(this.messageValue || '', {
+    subject: new UntypedFormControl(this.subjectValue || ''),
+    message: new UntypedFormControl(this.messageValue || '', {
       validators: [
         Validators.required,
         Validators.minLength(10),
