@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-cta',
@@ -10,7 +9,6 @@ export class CtaComponent {
   languageIcons: string[];
   frameworkIcons: string[];
   databaseIcons: string[];
-  faCheckCircle = faCheckCircle;
   constructor() {
     this.languageIcons = [
       'javascript-plain',

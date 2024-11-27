@@ -1,5 +1,5 @@
 <section id="contact" class="main">
-  <fa-icon [icon]="faEnvelope" class="icon major"></fa-icon>
+  <fa-icon [icon]="['fas', 'envelope']" class="icon major"></fa-icon>
   <h2>Contact</h2>
 
   <div *ngIf="showErrMsg && !submit">
@@ -27,12 +27,12 @@
     <div class="form-input">
       <input type="email" name="_replyto" formControlName="email" required />
       <fa-icon
-        [icon]="faCheck"
+        [icon]="['fas', 'check']"
         class="icon success"
         *ngIf="email.valid && email.dirty"
       ></fa-icon>
       <fa-icon
-        [icon]="faTimes"
+        [icon]="['fas', 'times']"
         class="icon danger"
         *ngIf="email.invalid && (email.dirty || email.touched)"
       ></fa-icon>
@@ -53,12 +53,12 @@
     <div class="form-input">
       <input type="text" name="_name" formControlName="name" required />
       <fa-icon
-        [icon]="faCheck"
+        [icon]="['fas', 'check']"
         class="icon success"
         *ngIf="name.valid && name.dirty"
       ></fa-icon>
       <fa-icon
-        [icon]="faTimes"
+        [icon]="['fas', 'check']"
         class="icon danger"
         *ngIf="name.invalid && (name.dirty || name.touched)"
       ></fa-icon>
@@ -85,12 +85,12 @@
         required
       ></textarea>
       <fa-icon
-        [icon]="faCheck"
+        [icon]="['fas', 'check']"
         class="icon success"
         *ngIf="message.valid && message.dirty"
       ></fa-icon>
       <fa-icon
-        [icon]="faTimes"
+        [icon]="['fas', 'check']"
         class="icon danger"
         *ngIf="message.invalid && (message.dirty || message.touched)"
       ></fa-icon>

@@ -1,16 +1,10 @@
 import {
   Component,
   ElementRef,
-  OnChanges,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { ContactService } from '../../contact.service';
 import { UntypedFormControl, Validators, UntypedFormGroup } from '@angular/forms';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { HttpErrorResponse } from '@angular/common/http';
-import { catchError, throwError } from 'rxjs';
 import { IContactForm } from './contact';
 
 @Component({
@@ -30,9 +24,6 @@ export class ContactComponent {
     });
   }
 
-  faEnvelope = faEnvelope;
-  faTimes = faTimes;
-  faCheck = faCheck;
   submit = false;
   showErrMsg = false;
   messageValue = localStorage.getItem('message');
