@@ -35,7 +35,7 @@ export class ProjectsComponent implements OnInit {
           })
           .map(({ name, description, html_url }, id) => {
             return { id, name, description, html_url };
-          }))
+          })),
     );
   }
 }

@@ -10,7 +10,9 @@
     border-bottom: none;
     position: relative;
     border: 1px solid $icon-color;
-    transition: box-shadow 0.5s, color 0.5s;
+    transition:
+      box-shadow 0.5s,
+      color 0.5s;
     box-shadow: inset 0 0 0 50px $primary-bg-color;
     width: 2em;
     line-height: 2em;
@@ -18,7 +20,9 @@
     border-radius: 100%;
     color: $icon-color;
     background: $icon-color;
-    transition: box-shadow 0.5s, color 0.5s;
+    transition:
+      box-shadow 0.5s,
+      color 0.5s;
     background-size: 0 0;
     background-position: 50% 50%;
     &:hover {

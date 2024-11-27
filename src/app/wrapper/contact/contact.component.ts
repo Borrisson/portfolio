@@ -1,10 +1,10 @@
-import {
-  Component,
-  ElementRef,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ContactService } from '../../contact.service';
-import { UntypedFormControl, Validators, UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormControl,
+  Validators,
+  UntypedFormGroup,
+} from '@angular/forms';
 import { IContactForm } from './contact';
 
 @Component({
@@ -69,7 +69,7 @@ export class ContactComponent {
     if (this.contactForm.valid) {
       this.ContactService.sendContact(
         'https://formspree.io/f/xzbyeged',
-        this.contactForm.value
+        this.contactForm.value,
       ).subscribe({
         next() {
           this.submit = true;

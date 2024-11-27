@@ -17,7 +17,7 @@ export class CtaComponent {
       'html5-plain',
       'ruby-plain',
       'sass-original',
-      'groovy-plain'
+      'groovy-plain',
     ];
     this.frameworkIcons = [
       'nodejs-plain',
@@ -31,7 +31,7 @@ export class CtaComponent {
       'express-original',
       'grails-plain',
       'nextjs-plain',
-      'redux-original'
+      'redux-original',
     ];
     this.databaseIcons = ['mongodb-plain', 'postgresql-plain'];
   }

@@ -20,19 +20,22 @@ export class TopBarComponent implements AfterViewInit {
       this.header.nativeElement.classList.remove('is-loading');
     }, 100);
 
-    setInterval(() => {
-      this.currentPosition = ++this.currentPosition % 3;
-      const active = this.positions[this.currentPosition].split('');
+    setInterval(
+      () => {
+        this.currentPosition = ++this.currentPosition % 3;
+        const active = this.positions[this.currentPosition].split('');
 
-      const charArrayInterval = setInterval(() => {
-        if (!active[0]) {
-          clearInterval(charArrayInterval);
-        } else {
-          this.title.nativeElement.textContent += active.shift();
-        }
-      }, 100);
+        const charArrayInterval = setInterval(() => {
+          if (!active[0]) {
+            clearInterval(charArrayInterval);
+          } else {
+            this.title.nativeElement.textContent += active.shift();
+          }
+        }, 100);
 
-      this.title.nativeElement.textContent = '';
-    }, Math.max(...this.positions.map((el) => el.length * 3 * 100)));
+        this.title.nativeElement.textContent = '';
+      },
+      Math.max(...this.positions.map((el) => el.length * 3 * 100)),
+    );
   }
 }

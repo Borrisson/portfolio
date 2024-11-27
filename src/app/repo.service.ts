@@ -16,6 +16,9 @@ export class RepoService {
   constructor(private http: HttpClient) {}
 
   getRepoes() {
-    return this.http.get<IProject[]>(this.repoesUrl, {observe: 'body', responseType: 'json'})
+    return this.http.get<IProject[]>(this.repoesUrl, {
+      observe: 'body',
+      responseType: 'json',
+    });
   }
 }
