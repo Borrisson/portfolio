@@ -21,6 +21,9 @@ import { AboutComponent } from './wrapper/about/about.component';
 import { ContactComponent } from './wrapper/contact/contact.component';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAnalytics, getAnalytics } from '@angular/fire/analytics';
+import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,11 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
   ],
   bootstrap: [AppComponent],
   imports: [BrowserModule, FontAwesomeModule, FormsModule, ReactiveFormsModule],
-  providers: [provideHttpClient(withInterceptorsFromDi())],
+  providers: [
+    provideHttpClient(withInterceptorsFromDi()),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAnalytics(() => getAnalytics()),
+  ],
 })
 export class AppModule {
   constructor(private library: FaIconLibrary) {
