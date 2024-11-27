@@ -8,9 +8,10 @@ import {
 import { IContactForm } from './contact';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss'],
+    selector: 'app-contact',
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.scss'],
+    standalone: false
 })
 export class ContactComponent {
   @ViewChild('textarea') textarea: ElementRef;
