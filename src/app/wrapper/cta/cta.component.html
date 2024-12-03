@@ -2,34 +2,12 @@
   <fa-icon [icon]="['fas', 'check-circle']" class="icon major"></fa-icon>
   <h2>Skills</h2>
   <div class="container-row">
-    <div class="container-column">
-      <h4>Languages</h4>
-      <div id="languages" class="container-row">
+    <div class="container-column" *ngFor="let skill of skills">
+      <h4>{{ skill.name }}</h4>
+      <div id="{{ skill.name }}" class="container-row">
         <i
           title="{{ filterNameOnly(icon) }}"
-          *ngFor="let icon of languageIcons"
-          class="large devicon-{{ icon }} devicon"
-          appHoverClass="colored"
-        ></i>
-      </div>
-    </div>
-    <div class="container-column">
-      <h4>Frameworks</h4>
-      <div id="frameworks" class="container-row">
-        <i
-          title="{{ filterNameOnly(icon) }}"
-          *ngFor="let icon of frameworkIcons"
-          class="large devicon-{{ icon }} devicon"
-          appHoverClass="colored"
-        ></i>
-      </div>
-    </div>
-    <div class="container-column">
-      <h4>Databases</h4>
-      <div id="databases" class="container-row">
-        <i
-          title="{{ filterNameOnly(icon) }}"
-          *ngFor="let icon of databaseIcons"
+          *ngFor="let icon of skill.icons"
           class="large devicon-{{ icon }} devicon"
           appHoverClass="colored"
         ></i>
