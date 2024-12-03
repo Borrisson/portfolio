@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { IProject } from './wrapper/projects/project';
 
 @Injectable({
@@ -8,10 +8,6 @@ import { IProject } from './wrapper/projects/project';
 export class RepoService {
   private repoesUrl =
     'https://api.github.com/users/Borrisson/repos?sort=created&per_page=all';
-
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
 
   constructor(private http: HttpClient) {}
 
