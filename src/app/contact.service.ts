@@ -13,7 +13,7 @@ export class ContactService {
   }
 
   private handleError(error: HttpErrorResponse) {
-    if (error.status === 0) {
+    if (error.status === 400) {
       console.error('An error occurred:', error.error);
     } else {
       console.error(
