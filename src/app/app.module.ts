@@ -24,6 +24,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAnalytics, getAnalytics } from '@angular/fire/analytics';
 import { environment } from 'src/environments/environment.prod';
+import { GetDeviconNamePipe } from './src/app/pipe/get-devicon-name.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,13 @@ import { environment } from 'src/environments/environment.prod';
     ContactComponent,
   ],
   bootstrap: [AppComponent],
-  imports: [BrowserModule, FontAwesomeModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    GetDeviconNamePipe,
+  ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),

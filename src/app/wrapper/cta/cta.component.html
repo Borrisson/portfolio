@@ -6,7 +6,7 @@
       <h4>{{ skill.name }}</h4>
       <div id="{{ skill.name }}" class="container-row">
         <i
-          title="{{ filterNameOnly(icon) }}"
+          title="{{ icon | deviconName }}"
           *ngFor="let icon of skill.icons"
           class="large devicon-{{ icon }} devicon"
           appHoverClass="colored"
