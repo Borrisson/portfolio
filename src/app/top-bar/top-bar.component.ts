@@ -1,42 +1,46 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
+import {
+  concat,
+  concatMap,
+  delay,
+  from,
+  ignoreElements,
+  interval,
+  map,
+  of,
+  repeat,
+  take,
+} from 'rxjs';
 
 @Component({
-    selector: 'app-top-bar',
-    templateUrl: './top-bar.component.html',
-    styleUrls: ['./top-bar.component.scss'],
-    standalone: false
+  selector: 'app-top-bar',
+  templateUrl: './top-bar.component.html',
+  styleUrls: ['./top-bar.component.scss'],
+  standalone: false,
 })
-export class TopBarComponent implements AfterViewInit {
-  constructor() {}
+export class TopBarComponent {
+  positions$ = from(['Developer', 'Pilot', 'Photographer']).pipe(
+    concatMap((title) => this.typeEffect(title)),
+    repeat(),
+  );
 
-  @ViewChild('header', { static: true }) header: ElementRef;
-  @ViewChild('title', { static: true }) title: ElementRef;
+  private type({ word, delayMs, backwards = false }) {
+    return interval(delayMs).pipe(
+      map((x) =>
+        backwards
+          ? word.substring(0, word.length - x)
+          : word.substring(0, x + 1),
+      ),
+      take(word.length + 1),
+    );
+  }
 
-  positions = ['Developer', 'Pilot', 'Photographer'];
-  currentPosition = 0;
-
-  ngAfterViewInit() {
-    this.header.nativeElement.classList.add('is-loading');
-    setTimeout(() => {
-      this.header.nativeElement.classList.remove('is-loading');
-    }, 100);
-
-    setInterval(
-      () => {
-        this.currentPosition = ++this.currentPosition % 3;
-        const active = this.positions[this.currentPosition].split('');
-
-        const charArrayInterval = setInterval(() => {
-          if (!active[0]) {
-            clearInterval(charArrayInterval);
-          } else {
-            this.title.nativeElement.textContent += active.shift();
-          }
-        }, 100);
-
-        this.title.nativeElement.textContent = '';
-      },
-      Math.max(...this.positions.map((el) => el.length * 3 * 100)),
+  private typeEffect(word: string) {
+    return concat(
+      this.type({ word, delayMs: 100 }),
+      of('').pipe(delay(1200), ignoreElements()),
+      this.type({ word, delayMs: 50, backwards: true }),
+      of('').pipe(delay(300), ignoreElements()),
     );
   }
 }
