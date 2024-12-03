@@ -1,5 +1,5 @@
 <section class="main items">
-  <article class="item" *ngFor="let project of projects">
+  <article class="item" *ngFor="let project of projects$ | async">
     <header>
       <a href="{{ project.html_url }}">
         <img
