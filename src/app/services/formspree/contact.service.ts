@@ -1,15 +1,17 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { IContactForm } from '../wrapper/contact/contact';
+import { IContactForm } from './contact';
 import { catchError, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class ContactService {
-  constructor(private http: HttpClient) {}
+  private url = 'https://formspree.io/f/xdopzqzj';
 
-  sendContact(url: string, data: IContactForm) {
-    return this.http.post(url, data).pipe(catchError(this.handleError));
+  sendContact(data: IContactForm) {
+    return inject(HttpClient)
+      .post(this.url, data)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {

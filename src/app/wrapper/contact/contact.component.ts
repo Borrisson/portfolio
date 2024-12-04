@@ -5,9 +5,9 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { ContactService } from '../../services/contact.service';
+import { ContactService } from '../../services/formspree/contact.service';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
-import { IContactForm } from './contact';
+import { IContactForm } from '../../services/formspree/contact';
 import { catchError, throwError } from 'rxjs';
 
 @Component({
@@ -70,10 +70,7 @@ export class ContactComponent implements OnInit {
   handleSubmit() {
     if (this.contactForm.valid) {
       inject(ContactService)
-        .sendContact(
-          'https://formspree.io/f/xzbyeged',
-          this.contactForm.getRawValue(),
-        )
+        .sendContact(this.contactForm.getRawValue())
         .pipe(
           catchError(() => {
             this.showErrMsg = true;
