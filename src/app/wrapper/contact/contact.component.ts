@@ -1,4 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ContactService } from '../../services/contact.service';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { IContactForm } from './contact';
@@ -10,10 +16,10 @@ import { catchError, throwError } from 'rxjs';
   styleUrls: ['./contact.component.scss'],
   standalone: false,
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   @ViewChild('textarea') textarea: ElementRef;
 
-  constructor(private ContactService: ContactService) {
+  ngOnInit(): void {
     this.contactForm.valueChanges.subscribe((value: IContactForm) => {
       this.textarea.nativeElement.style.height = 'auto';
       this.textarea.nativeElement.style.height = `${this.textarea.nativeElement.scrollHeight}px`;
@@ -63,10 +69,11 @@ export class ContactComponent {
 
   handleSubmit() {
     if (this.contactForm.valid) {
-      this.ContactService.sendContact(
-        'https://formspree.io/f/xzbyeged',
-        this.contactForm.getRawValue(),
-      )
+      inject(ContactService)
+        .sendContact(
+          'https://formspree.io/f/xzbyeged',
+          this.contactForm.getRawValue(),
+        )
         .pipe(
           catchError(() => {
             this.showErrMsg = true;
