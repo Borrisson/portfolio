@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GithubService } from './services/github/github.service';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
   standalone: false,
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  constructor(private githubService: GithubService) {}
+  ngOnInit(): void {
+    this.githubService.getUser();
+  }
+}

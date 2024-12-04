@@ -2,6 +2,7 @@ import type { IProject } from './project';
 import type { IUser } from './user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, take, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class GithubService {
   private baseGithubUrl = 'https://api.github.com/users/Borrisson';
   private repoesPath = 'repos?sort=created&per_page=all';
+  private user = new BehaviorSubject<IUser>({} as IUser);
+  user$ = this.user.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -23,9 +26,15 @@ export class GithubService {
   }
 
   getUser() {
-    return this.http.get<IUser>(`${this.baseGithubUrl}`, {
-      observe: 'body',
-      responseType: 'json',
-    });
+    return this.http
+      .get<IUser>(`${this.baseGithubUrl}`, {
+        observe: 'body',
+        responseType: 'json',
+      })
+      .pipe(
+        tap((user) => this.user.next(user)),
+        take(1),
+      )
+      .subscribe();
   }
 }

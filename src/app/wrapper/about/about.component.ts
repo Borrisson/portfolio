@@ -9,7 +9,5 @@ import { GithubService } from 'src/app/services/github/github.service';
   standalone: false,
 })
 export class AboutComponent {
-  location$ = inject(GithubService)
-    .getUser()
-    .pipe(map((user) => user.location));
+  location$ = inject(GithubService).user$.pipe(map((user) => user.location));
 }

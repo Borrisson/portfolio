@@ -20,9 +20,7 @@ import { GithubService } from '../services/github/github.service';
   standalone: false,
 })
 export class TopBarComponent {
-  location$ = inject(GithubService)
-    .getUser()
-    .pipe(map((user) => user.location));
+  location$ = inject(GithubService).user$.pipe(map((user) => user.location));
   positions$ = from(['Developer', 'Pilot', 'Photographer']).pipe(
     concatMap((title) => this.typeEffect(title)),
     repeat(),
