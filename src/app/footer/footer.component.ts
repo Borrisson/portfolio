@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { GithubService } from '../services/github/github.service';
+import { map } from 'rxjs';
 
 @Component({
-    selector: 'app-footer',
-    templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.scss'],
-    standalone: false
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss'],
+  standalone: false,
 })
-export class FooterComponent {}
+export class FooterComponent {
+  gitHubUrl$ = inject(GithubService).user$.pipe(map((user) => user.html_url));
+}
