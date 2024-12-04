@@ -5,7 +5,7 @@ import { IProject } from './wrapper/projects/project';
 @Injectable({
   providedIn: 'root',
 })
-export class RepoService {
+export class GithubService {
   private repoesUrl =
     'https://api.github.com/users/Borrisson/repos?sort=created&per_page=all';
 

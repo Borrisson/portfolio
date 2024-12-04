@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { IProject } from './project';
-import { RepoService } from '../../repo.service';
+import { GithubService } from '../../github.service';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   standalone: false,
 })
 export class ProjectsComponent {
-  public projects$: Observable<IProject[]> = inject(RepoService)
+  public projects$: Observable<IProject[]> = inject(GithubService)
     .getRepoes()
     .pipe(
       map((projects) =>
