@@ -1,11 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ContactService } from '../../services/contact.service';
-import {
-  UntypedFormControl,
-  Validators,
-  UntypedFormGroup,
-} from '@angular/forms';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { IContactForm } from './contact';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -27,20 +24,18 @@ export class ContactComponent {
 
   submit = false;
   showErrMsg = false;
-  messageValue = localStorage.getItem('message');
-  subjectValue = localStorage.getItem('subject');
 
-  contactForm = new UntypedFormGroup({
-    name: new UntypedFormControl('', Validators.required),
-    email: new UntypedFormControl('', {
+  contactForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', {
       validators: [
         Validators.required,
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
       ],
       updateOn: 'blur',
     }),
-    subject: new UntypedFormControl(this.subjectValue || ''),
-    message: new UntypedFormControl(this.messageValue || '', {
+    subject: new FormControl(localStorage.getItem('subject') || ''),
+    message: new FormControl(localStorage.getItem('message') || '', {
       validators: [
         Validators.required,
         Validators.minLength(10),
@@ -70,17 +65,19 @@ export class ContactComponent {
     if (this.contactForm.valid) {
       this.ContactService.sendContact(
         'https://formspree.io/f/xzbyeged',
-        this.contactForm.value,
-      ).subscribe({
-        next() {
+        this.contactForm.getRawValue(),
+      )
+        .pipe(
+          catchError(() => {
+            this.showErrMsg = true;
+            return throwError(() => new Error('Something bad happened.'));
+          }),
+        )
+        .subscribe(() => {
           this.submit = true;
           this.showErrMsg = false;
           this.contactForm.reset();
-        },
-        error() {
-          this.showErrMsg = true;
-        },
-      });
+        });
     }
   }
 }
