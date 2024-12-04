@@ -24,7 +24,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAnalytics, getAnalytics } from '@angular/fire/analytics';
 import { environment } from 'src/environments/environment.prod';
-import { GetDeviconNamePipe } from './src/app/pipe/get-devicon-name.pipe';
+import { GetDeviconNamePipe } from './pipes/get-devicon-name.pipe';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ContactService } from '../../contact.service';
+import { ContactService } from '../../services/contact.service';
 import {
   UntypedFormControl,
   Validators,
@@ -8,10 +8,10 @@ import {
 import { IContactForm } from './contact';
 
 @Component({
-    selector: 'app-contact',
-    templateUrl: './contact.component.html',
-    styleUrls: ['./contact.component.scss'],
-    standalone: false
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss'],
+  standalone: false,
 })
 export class ContactComponent {
   @ViewChild('textarea') textarea: ElementRef;

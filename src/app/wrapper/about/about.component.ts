@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { map } from 'rxjs';
+import { GithubService } from 'src/app/services/github/github.service';
 
 @Component({
-    selector: 'app-about',
-    templateUrl: './about.component.html',
-    styleUrls: ['./about.component.scss'],
-    standalone: false
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss'],
+  standalone: false,
 })
-export class AboutComponent {}
+export class AboutComponent {
+  location$ = inject(GithubService)
+    .getUser()
+    .pipe(map((user) => user.location));
+}

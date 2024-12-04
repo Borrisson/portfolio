@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { IContactForm } from './wrapper/contact/contact';
+import { IContactForm } from '../wrapper/contact/contact';
 import { catchError, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root',

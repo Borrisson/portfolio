@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   concat,
   concatMap,
@@ -11,6 +11,7 @@ import {
   repeat,
   take,
 } from 'rxjs';
+import { GithubService } from '../services/github/github.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -19,6 +20,9 @@ import {
   standalone: false,
 })
 export class TopBarComponent {
+  location$ = inject(GithubService)
+    .getUser()
+    .pipe(map((user) => user.location));
   positions$ = from(['Developer', 'Pilot', 'Photographer']).pipe(
     concatMap((title) => this.typeEffect(title)),
     repeat(),

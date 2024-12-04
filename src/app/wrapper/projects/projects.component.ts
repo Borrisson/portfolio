@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { IProject } from './project';
-import { GithubService } from '../../github.service';
+import { IProject } from '../../services/github/project';
+import { GithubService } from '../../services/github/github.service';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
