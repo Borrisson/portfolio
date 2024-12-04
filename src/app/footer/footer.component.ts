@@ -10,4 +10,5 @@ import { map } from 'rxjs';
 })
 export class FooterComponent {
   gitHubUrl$ = inject(GithubService).user$.pipe(map((user) => user.html_url));
+  socials$ = inject(GithubService).getSocials();
 }

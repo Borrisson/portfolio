@@ -1,10 +1,7 @@
 <footer id="footer" class="main">
   <div>
-    <a href="https://www.instagram.com/sir_rob_cul/" class="icon">
-      <fa-icon [icon]="['fab', 'instagram']"></fa-icon>
-    </a>
-    <a href="https://www.linkedin.com/in/lucborris/" class="icon">
-      <fa-icon [icon]="['fab', 'linkedin-in']"></fa-icon>
+    <a *ngFor="let social of socials$ | async" [href]="social.url" class="icon">
+      <fa-icon [icon]="['fab', social.provider]"></fa-icon>
     </a>
     <a href="{{ gitHubUrl$ | async }}" class="icon">
       <fa-icon [icon]="['fab', 'github']"></fa-icon>

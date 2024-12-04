@@ -3,6 +3,7 @@ import type { IUser } from './user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, take, tap } from 'rxjs';
+import { SocialAccount } from './social_accounts';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,16 @@ export class GithubService {
   user$ = this.user.asObservable();
 
   constructor(private http: HttpClient) {}
+
+  getSocials() {
+    return this.http.get<SocialAccount[]>(
+      `${this.baseGithubUrl}/social_accounts`,
+      {
+        observe: 'body',
+        responseType: 'json',
+      },
+    );
+  }
 
   getRepoes() {
     return this.http.get<IProject[]>(
