@@ -3,8 +3,15 @@
     <h1>Hello</h1>
     <p>
       my name is <strong>Luc Borris</strong>, I'm a
-      <strong>{{ positions$ | async }}</strong> based in Vancouver. Below are a
-      few selections of my work
+      <strong
+        [ngStyle]="{
+          minWidth: '10rem',
+          display: 'inline-block',
+          textAlign: 'left',
+        }"
+        >{{ positions$ | async }}</strong
+      >
+      based in Vancouver. Below are a few selections of my work
     </p>
   </div>
 </header>
